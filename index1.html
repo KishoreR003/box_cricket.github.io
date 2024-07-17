@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Cricket Championship</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        header, footer {
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        header h1 {
+            margin: 0;
+        }
+        main {
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 2rem;
+        }
+        .btn {
+            display: inline-block;
+            background: #ffcc00;
+            color: #000;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+        .btn:hover {
+            background: #ff9900;
+        }
+        .contact-info {
+            background: rgba(255, 255, 255, 0.8);
+            color: #000;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+        .qr-code {
+            display: block;
+            margin: 1rem auto;
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 600px) {
+            header, footer {
+                padding: 1rem;
+            }
+            main {
+                padding: 1rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+            .btn {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Box Cricket Championship</h1>
+            <p>12 Team Entry</p>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section>
+                <h2>Event Details</h2>
+                <p><strong>Date:</strong> 15/08/2024</p>
+                <p><strong>Entry Fee:</strong> ₹2000 per Team (Advance ₹1000)</p>
+                <p><strong>Prizes:</strong></p>
+                <ul>
+                    <li>Winner: ₹6000 + Trophy</li>
+                    <li>Runner: ₹3000 + Trophy</li>
+                </ul>
+                <p><strong>Format:</strong> Knockout Chucking Tournament</p>
+            </section>
+            <section>
+                <h2>Contact Information</h2>
+                <div class="contact-info">
+                    <p><strong>Kishore:</strong> 9498401720</p>
+                    <p><strong>Kaarmukil:</strong> 8248232109</p>
+                </div>
+                <img src="qr-code.png" alt="QR Code" class="qr-code">
+                <a href="registration.html" class="btn">Register Now</a>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>Location: Falcon Turf, Perubakkam, Medavakkam</p>
+        <p>&copy; 2024 Box Cricket Championship. All rights reserved.</p>
+    </footer>
+</body>
+</html>
