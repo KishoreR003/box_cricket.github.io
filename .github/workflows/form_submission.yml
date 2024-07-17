@@ -1,0 +1,25 @@
+name: Form Submission
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  save-data:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Extract form data
+      run: |
+        echo "teamname,captainname,contactno,place,advancepaid" > registration_data.csv
+        echo "${{ github.event.issue.body }}" | jq -r '[.teamname, .captainname, .contactno, .place, .advancepaid] | @csv' >> registration_data.csv
+
+    - name: Commit and push data
+      run: |
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git add registration_data.csv
+        git commit -m "New registration"
+        git push
