@@ -1,68 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Register Form Design</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="box">
-        <img src="user.png" class="user">
+    <div class="container">
         <h1>Register Here</h1>
         <form id="registrationForm" onsubmit="submitForm(event)">
-            <p>Team Name</p>
-            <input type="text" name="teamname" placeholder="Enter Team Name" required>
-
-            <p>Captain Name</p>
-            <input type="text" name="captainname" placeholder="Enter Captain Name" required>
-
-            <p>Contact Number</p>
-            <input type="text" name="contactno" placeholder="Enter Contact Number" required>
-
-            <p>Place</p>
-            <input type="text" name="place" placeholder="Enter Place" required>
-
-            <p>Advance Paid</p>
-            <select name="advancepaid" required>
+            <label for="teamname">Team Name:</label>
+            <input type="text" id="teamname" name="teamname" required>
+            
+            <label for="captainname">Captain Name:</label>
+            <input type="text" id="captainname" name="captainname" required>
+            
+            <label for="contactno">Contact Number:</label>
+            <input type="text" id="contactno" name="contactno" required>
+            
+            <label for="place">Place:</label>
+            <input type="text" id="place" name="place" required>
+            
+            <label for="advancepaid">Advance Paid:</label>
+            <select id="advancepaid" name="advancepaid" required>
                 <option value="">Select Yes or No</option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
             </select>
-
-            <input type="submit" value="Register">
+            
+            <button type="submit">Register</button>
         </form>
     </div>
 
-    <script>
-        async function submitForm(event) {
-            event.preventDefault();
-            const form = document.getElementById('registrationForm');
-            const formData = new FormData(form);
-            const data = {};
-            formData.forEach((value, key) => { data[key] = value });
-
-            // Example endpoint where you handle form data on your server-side
-            const endpoint = 'https://your-server-endpoint.com/register';
-
-            try {
-                const response = await fetch(endpoint, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                if (response.ok) {
-                    alert('Registration successful!');
-                    form.reset();
-                } else {
-                    alert('Registration failed. Please try again.');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Registration failed. Please try again.');
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
